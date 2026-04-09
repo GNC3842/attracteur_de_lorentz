@@ -29,7 +29,7 @@ class ChaoticSysteme:
 ################
 # Attracteur de Lorentz
 ################
-class LorentzSystem(ChaoticSysteme):
+class LorenzSystem(ChaoticSysteme):
   """
   Régi par 3 équations:
       dx/dt = σ(y - x)
@@ -96,3 +96,6 @@ class LorentzSystem(ChaoticSysteme):
 ################
 class RosslerSystem(ChaoticSysteme):
   pass
+
+
+SYSTEMS: dict[str, ChaoticSystem] = {"Lorenz":  LorenzSystem(),"Rössler": RosslerSystem()}

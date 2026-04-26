@@ -66,7 +66,7 @@ def multi_integrate(system,states0,n_steps,dt):
   """
   n = states0.shape[0]
   traj = np.empty((n_steps,n,3))
-  traj[0] = state0
+  traj[0] = states0
 
   for i in range(1,n_steps):
     traj[i] = rk4_step(system,traj[i-1],dt)

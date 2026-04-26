@@ -41,10 +41,11 @@ class LorenzSystem(ChaoticSysteme):
       y -> différence de température ascendant/descdenat
       z -> distorsion du profil thermique vertical
   """
-  sigma: float = 10.0
-  rho: float = 28.0
-  beta: float = 8.0/3.0
-  name: str   = field(default="Lorenz", init=False, repr=False)
+  def __init__(self,sigma = 10.0,rho = 28.0, beta = 8.0/3.0):
+    self.sigma = sigma
+    self.rho = rho
+    self.beta = beta
+    self.name = "Lorenz"
 
   def deriv(self,state):
     """Calcule des dérivées dx/dt, dy/dt et dz/dt
